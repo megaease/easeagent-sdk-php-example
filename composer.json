@@ -1,0 +1,34 @@
+{
+    "name": "megaease/easeagent-sdk-php-example",
+    "description": "Example of three services collaborating in a request",
+    "repositories": {
+        "0": {
+            "type": "path",
+            "url": "../easeagent-sdk-php",
+            "options": {
+                "symlink": true
+            }
+        }
+    },
+    "require": {
+        "symfony/yaml": "^6.1",
+        "monolog/monolog": "^1.23",
+        "megaease/easeagent-sdk-php": "dev-main",
+        "guzzlehttp/guzzle": "^7.2",
+        "symfony/http-foundation": "3.4.x-dev"
+        
+    },
+    "minimum-stability": "beta",
+    "authors": [
+        {
+            "name": "Yufu Deng",
+            "email": "observeralone@gmail.com"
+        }
+    ],
+    "scripts": {
+        "run-router": "php -S '0.0.0.0:8080' router.php",
+        "run-frontend": "php -S '0.0.0.0:8081' frontend.php",
+        "run-backend": "php -S '0.0.0.0:9000' backend.php",
+        "run-zipkin": "docker run -p 9411:9411 -d openzipkin/zipkin"
+    }
+}
