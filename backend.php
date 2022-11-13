@@ -7,7 +7,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $agent = AgentBuilder::buildFromYaml("./configs/agent_backend.yml");
 $agent->serverTransaction(function ($span) use ($agent) {
-    $childSpan = $agent->startClientSpan($span, 'user:get_list:mysql_query');
+    $childSpan = $agent->startClientSpan($span, 'mysql-mysql_query');
+    $childSpan->setRemoteEndpoint(\Zipkin\Endpoint::create("mysql"));
     usleep(50000);
     $childSpan->finish();
     echo "<p> --------------------- backend end --------------------------- </p>";

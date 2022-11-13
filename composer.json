@@ -1,15 +1,6 @@
 {
     "name": "megaease/easeagent-sdk-php-example",
     "description": "Example of three services collaborating in a request",
-    "repositories": {
-        "0": {
-            "type": "path",
-            "url": "../easeagent-sdk-php",
-            "options": {
-                "symlink": true
-            }
-        }
-    },
     "require": {
         "symfony/yaml": "^6.1",
         "monolog/monolog": "^1.23",

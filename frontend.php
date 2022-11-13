@@ -1,6 +1,7 @@
 <?php
 
 use Easeagent\AgentBuilder;
+use Easeagent\HTTP\HttpUtils;
 use Zipkin\Timestamp;
 use GuzzleHttp\Client;
 
@@ -12,10 +13,11 @@ $agent->serverTransaction(function ($span) use ($agent) {
     print_r($_SERVER);
 
     /* Creates the span for getting the users list */
-    $childSpan = $agent->startClientSpan($span, 'users:get_list');
+    $childSpan = $agent->startClientSpan($span, "");
 
     /* Injects the context into the wire */
     $headers = $agent->injectorHeaders($childSpan);
+
     /* HTTP Request to the backend */
     $httpClient = new Client();
     $request = new \GuzzleHttp\Psr7\Request('POST', 'localhost:9000', $headers);
@@ -24,7 +26,13 @@ $agent->serverTransaction(function ($span) use ($agent) {
     echo $response->getBody();
     $childSpan->annotate('request_finished', Timestamp\now());
 
-    $childSpan->finish();
+    /* Save Request info */
+    HttpUtils::saveInfos(
+        $childSpan,
+        $request->getMethod(),
+        $request->getUri()->getPath(),
+        $response->getStatusCode()
+    )->finish();
 });
 
 
