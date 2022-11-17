@@ -27,12 +27,12 @@ $agent->serverTransaction(function ($span) use ($agent) {
     $childSpan->annotate('request_finished', Timestamp\now());
 
     /* Save Request info */
-    HttpUtils::saveInfos(
+    HttpUtils::finishSpan(
         $childSpan,
         $request->getMethod(),
         $request->getUri()->getPath(),
         $response->getStatusCode()
-    )->finish();
+    );
 });
 
 
