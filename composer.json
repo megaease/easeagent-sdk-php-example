@@ -2,8 +2,6 @@
     "name": "megaease/easeagent-sdk-php-example",
     "description": "Example of three services collaborating in a request",
     "require": {
-        "symfony/yaml": "^6.1",
-        "monolog/monolog": "^1.23",
         "megaease/easeagent-sdk-php": "dev-main",
         "guzzlehttp/guzzle": "^7.2",
         "symfony/http-foundation": "3.4.x-dev"
@@ -23,3 +21,4 @@
         "run-zipkin": "docker run -p 9411:9411 -d openzipkin/zipkin"
     }
 }
+

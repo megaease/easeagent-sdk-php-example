@@ -26,3 +26,4 @@
 composer.lock
 /.history/*
 /configs/*
+.DS_Store

@@ -3,9 +3,9 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Easeagent\AgentBuilder;
 use Zipkin\Endpoint;
-use Easeagent\Middleware\Type;
 
-$agent = AgentBuilder::buildFromYaml("./configs/agent_router.yml");
+$agent = AgentBuilder::buildFromYaml(getenv('EASEAGENT_SDK_CONFIG_FILE'));
+
 $agent->serverTransaction(function ($span) use ($agent) {
     echo "<p> is noop: " . ($span->isNoop() == true ? "true" : "false") . "</p>";
     echo "<p> trace id: " . ($span->getContext()->getTraceId()) . "</p>";
