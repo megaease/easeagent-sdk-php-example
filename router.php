@@ -6,7 +6,7 @@ use Zipkin\Endpoint;
 
 $agent = AgentBuilder::buildFromYaml(getenv('EASEAGENT_SDK_CONFIG_FILE'));
 
-$agent->serverTransaction(function ($span) use ($agent) {
+$agent->serverReceive(function ($span) use ($agent) {
     echo "<p> is noop: " . ($span->isNoop() == true ? "true" : "false") . "</p>";
     echo "<p> trace id: " . ($span->getContext()->getTraceId()) . "</p>";
     $childSpan = $agent->startClientSpan($span,  'user:get_list:mysql_query');

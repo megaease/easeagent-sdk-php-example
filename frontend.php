@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 require_once __DIR__ . '/vendor/autoload.php';
 
 $agent = AgentBuilder::buildFromYaml(getenv('EASEAGENT_SDK_CONFIG_FILE'));
-$agent->serverTransaction(function ($span) use ($agent) {
+$agent->serverReceive(function ($span) use ($agent) {
     usleep(100 * mt_rand(1, 3));
     print_r($_SERVER);
 
