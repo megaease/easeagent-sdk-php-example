@@ -5,7 +5,6 @@
         "megaease/easeagent-sdk-php": "dev-main",
         "guzzlehttp/guzzle": "^7.2",
         "symfony/http-foundation": "3.4.x-dev"
-        
     },
     "minimum-stability": "beta",
     "authors": [
@@ -15,10 +14,9 @@
         }
     ],
     "scripts": {
-        "run-router": "php -S '0.0.0.0:8080' router.php",
-        "run-frontend": "php -S '0.0.0.0:8081' frontend.php",
-        "run-backend": "php -S '0.0.0.0:9000' backend.php",
+        "run-router": "EASEAGENT_CONFIG=`pwd`/config/agent_router.yml php -S '0.0.0.0:8080' router.php",
+        "run-frontend": "EASEAGENT_CONFIG=`pwd`/config/agent_frontend.yml php -S '0.0.0.0:8081' frontend.php",
+        "run-backend": "EASEAGENT_CONFIG=`pwd`/config/agent_backend.yml php -S '0.0.0.0:9000' backend.php",
         "run-zipkin": "docker run -p 9411:9411 -d openzipkin/zipkin"
     }
 }
-

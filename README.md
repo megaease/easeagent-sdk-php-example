@@ -3,7 +3,7 @@ This is an example app where three php services use [easeagent-sdk-php](https://
 
 ## Requirements
 - [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-- [Docker](https://docs.docker.com/engine/installation/) (optional, if you use megacloud this is not needed)
+- [Docker](https://docs.docker.com/engine/installation/) (optional, if you use Megaease Cloud this is not needed)
 
 ## Running the example
 
@@ -40,9 +40,11 @@ curl http://localhost:8081
 3. Next, you can view traces that went through the backend via http://localhost:9411/?serviceName=frontend.
 
 
-## Running example with a MegaCloud location:
+## Running example with a MegaEase Cloud location:
 
-If you need to pass the megacloud endpoint, please download the `agent.yaml` from megacloud, `MEGA_CLOUD_URL` and `TLS` will be filled in for you automatically.
+If you need to pass the MegaEase Cloud endpoint, please download the `agent.yaml` from [MegaEase Cloud](https://cloud.megaease.com/) `[stack]->[document]->[PHP]`.
+
+`MEGAEASE_CLOUD_URL` and `TLS` will be filled in for you automatically.
 
 Replace `agent.yml` with the configuration file in the `configs` directory. Then run it.
 

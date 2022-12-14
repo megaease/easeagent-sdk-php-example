@@ -1,0 +1,10 @@
+serviceName: demo.php.frontend_service
+tracing.type: log-tracing
+tracing.enable: true
+tracing.sample.rate: 1.0
+tracing.shared.spans: true
+tracing.id128bit: false
+reporter.output.server: 
+reporter.output.server.tls.enable: false
+reporter.output.server.tls.key: ""
+reporter.output.server.tls.cert: ""
