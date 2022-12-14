@@ -4,7 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Easeagent\AgentBuilder;
 use Zipkin\Endpoint;
 
-$agent = AgentBuilder::buildFromYaml(getenv('EASEAGENT_SDK_CONFIG_FILE'));
+$agent = AgentBuilder::buildFromYaml(getenv('EASEAGENT_CONFIG'));
 
 $agent->serverReceive(function ($span) use ($agent) {
     echo "<p> is noop: " . ($span->isNoop() == true ? "true" : "false") . "</p>";
