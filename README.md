@@ -42,7 +42,7 @@ curl http://localhost:8081
 
 ## Running example with a MegaEase Cloud location:
 
-If you need to pass the MegaEase Cloud endpoint, please download the `agent.yaml` from [MegaEase Cloud](https://cloud.megaease.com/). By [Details](https://github.com/megaease/easeagent-sdk-php/blob/main/doc/megaease-cloud-config.md#third-about-megaease-cloud).
+If you need to pass the MegaEase Cloud endpoint, please download the `agent.yml` from [MegaEase Cloud](https://cloud.megaease.com/). By [Details](https://github.com/megaease/easeagent-sdk-php/blob/main/doc/megaease-cloud-config.md#third-about-megaease-cloud).
 
 `MEGAEASE_CLOUD_URL` and `TLS` will be filled in for you automatically.
 
