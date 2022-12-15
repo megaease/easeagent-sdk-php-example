@@ -2,15 +2,14 @@
     "name": "megaease/easeagent-sdk-php-example",
     "description": "Example of three services collaborating in a request",
     "require": {
-        "megaease/easeagent-sdk-php": "dev-main",
+        "megaease/easeagent-sdk-php": "^0.0.1",
         "guzzlehttp/guzzle": "^7.2",
         "symfony/http-foundation": "3.4.x-dev"
     },
     "minimum-stability": "beta",
     "authors": [
         {
-            "name": "Yufu Deng",
-            "email": "observeralone@gmail.com"
+            "name": "MegaEase"
         }
     ],
     "scripts": {
